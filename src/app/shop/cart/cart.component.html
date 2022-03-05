@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashionista</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon1.png"> 
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <app-navbar></app-navbar>
+
+    <main>
+        <div class="slider-area ">
+            <div class="single-slider slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Cart</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <section id="cart" class="ftco-section ftco-cart">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-12 ftco-animate">
+                            <div class="cart-list">
+                                <div class="container">
+                                    <div class="row header">
+                                        <div class="col-xl-1 col-sm-1 col-md-1 col-lg-1 col-1 center1 "> &nbsp; </div>
+                                        <div class="col-xl-1 col-sm-1 col-md-1 col-lg-1 col-1 center1">&nbsp;</div>
+                                        <div class="col-xl-4 col-sm-4 col-md-4 col-lg-4 col-4 center1">product</div>
+                                        <div class="col-xl-2 col-sm-2 col-md-2 col-lg-2 col-2 center1">price</div>
+                                        <div class="col-xl-2 col-sm-2 col-md-2 col-lg-2  col-2 center1">Quantity</div>
+                                        <div class="col-xl-2 col-sm-2 col-md-2 col-lg-2  col-2 center1">total</div>
+                                    </div>
+                                    <app-row *ngFor="let card of home.carProduct" [id]='card.id' [userId]='card.userId' [productId]='card.productId'
+                                    [quantity]='card.quantity' [price]='card.price' [name]='card.name' [color]='card.color' [size]='card.size' 
+                                    [imageName]='card.imageName' ></app-row>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-lg-3 col-md-4 mt-5 cart-wrap ftco-animate">
+                            <p class="text-center"><a (click)="Checkout()" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+                
+
+            
+    </main>
+
+<app-footer></app-footer> 
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+.error{
+    color: red;
+}
+
+#button:disabled,
+#button[disabled]{
+    display: inline-block;
+    padding: 18px 36px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #aa7aa6;
+    font-size: 15px;
+    font-weight: 700;
+    color: #aa7aa6;
+    text-transform: uppercase;
+    font-weight: 400;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s
+  
+}

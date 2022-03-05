@@ -1,0 +1,12 @@
+
+.billing_details{
+    margin: 100px;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+  .btn_3{
+      margin-left: 85px !important;
+  }

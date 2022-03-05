@@ -1,0 +1,52 @@
+<!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+    <div class="single-popular-items mb-50 text-center">
+        <div class="popular-img">
+            <img src="https://img.ltwebstatic.com/images3_pi/2021/05/13/16208911772f9ec32dea5d478dba64ec940dcd379a_thumbnail_600x.webp" width="238.250"height="450.078" alt="">
+            <div class="img-cap">
+                <span>Add to cart</span>
+            </div>
+            <div class="favorit-items">
+                <span class="flaticon-heart"></span>
+            </div>
+        </div>
+        <div class="popular-caption">
+            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
+            <span>$ 45,743</span>
+        </div>
+    </div>
+</div> -->
+
+
+<mat-card class="example-card" style="margin: 20px;">
+
+    <mat-card-header>
+  
+    </mat-card-header>
+  
+    <div class="img">
+  
+    <img mat-card-image src="{{imageName}}" alt="Photo of a Shiba Inu">  
+  
+  </div>
+  
+    <mat-card-content>
+  
+      <h2>{{name | uppercase}}</h2>
+  
+      <p>price after Discount: {{priceAfterDiscount}}</p>
+  
+      <p>price befor Discount: {{priceBeforDiscount}}</p>
+      <p>Status in Stock: {{state}}</p>
+  
+    </mat-card-content>
+  
+    <mat-card-actions>
+  
+     
+      <button class="genric-btn success circle" (click)="openEdit()" mat-button  style="background-color: #24B3A8;">Edit</button>
+      <button class="genric-btn success circle" (click)="delete()" mat-button  style="background-color: #24B3A8; ">Delete</button>
+
+  
+    </mat-card-actions>
+  
+  </mat-card>

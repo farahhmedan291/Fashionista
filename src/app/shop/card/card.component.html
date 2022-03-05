@@ -1,0 +1,30 @@
+
+<mat-card class="example-card">
+
+  <mat-card-header>
+
+  </mat-card-header>
+
+  <div class="img">
+
+  <img mat-card-image src="{{imageName}}" alt="Photo of a Shiba Inu">  
+
+</div>
+
+  <mat-card-content>
+
+    <h2>{{name}}</h2>
+
+    <p>{{priceAfterDiscount}}</p>
+
+    <p>price befor: {{priceBeforDiscount}}</p>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+
+    <button class="genric-btn success circle" mat-button (click)="showProfile()" style="background-color: #24B3A8; margin-left: 90px;">info</button>
+
+  </mat-card-actions>
+
+</mat-card>

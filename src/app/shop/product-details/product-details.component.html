@@ -1,0 +1,249 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashionista</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon1.png"> 
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <app-navbar></app-navbar>
+
+    <main>
+
+       
+        <div class="slider-area ">
+            <div class="single-slider slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Fashionista Shop</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Area End-->
+         <div class="container">
+                <!-- <<<<<<<<<<<<<<<<<<<< Single Product Details Area Start >>>>>>>>>>>>>>>>>>>>>>>>> -->
+                <section class="single_product_details_area section_padding_0_100" style="padding-top: 40px;">
+                    <div class="container">
+                        <div class="row">
+        
+                            <div class="col-12 col-md-6">
+                                <div class="single_product_thumb">
+                                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+        
+                                       
+        
+                                        <mat-grid-list cols="4" rowHeight="400px">
+                                            <mat-grid-tile [colspan]="3" [rowspan]="1">
+                                                <img src="{{admin.ProductImages[0].imageName}}" alt="First slide">
+                                              
+                                            </mat-grid-tile>
+											<mat-grid-tile [colspan]="1" [rowspan]="2">
+                                                <img src="{{admin.ProductImages[1].imageName}}" alt="First slide">
+                                              
+                                            </mat-grid-tile>
+											<mat-grid-tile [colspan]="1" [rowspan]="1">
+                                                <img src="{{admin.ProductImages[2].imageName}}" alt="First slide">
+                                              
+                                            </mat-grid-tile>
+											<mat-grid-tile [colspan]="2" [rowspan]="1">
+                                                <img src="{{admin.ProductImages[3].imageName}}" alt="First slide">
+                                              
+                                            </mat-grid-tile>
+                                          </mat-grid-list>
+        
+                                    
+        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-12 col-md-6" style="padding-top: 300px; padding-left: 80px;">
+                                <div class="single_product_desc">
+        
+                                    <h4 class="title"><a href="#">{{home.selectedProduct.name | uppercase}}</a></h4>
+        
+                                    <h4 class="price">Price : ${{home.selectedProduct.priceAfterDiscount}}</h4>
+        
+                                    <p class="available">status in stock: <span class="text-muted">{{home.selectedProduct.state}}</span>
+										
+									</p>
+        
+                                  
+                                        <button mat-button (click)="openDialog()" class=" size-btn">
+										 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">                                            
+											<path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z"/> </svg> 
+											 Size Guide</button>
+
+
+        
+                                    <div class="widget size mb-50">
+                                        <h6 class="widget-title">Size</h6>
+                                        <div class="widget-desc">
+                                           
+									<app-size *ngFor="let size of home.ProductSize"  [id]='size.id' [name]="size.name" [productId]='size.productId'(change)="onItemChange(size.name)"></app-size>	
+									
+                                        </div>
+                                    </div>
+
+									<div class="widget size mb-50">
+                                        <h6 class="widget-title">Color</h6>
+                                        <div class="widget-desc">
+											
+											<app-color *ngFor="let color of home.ProductColor"  [id]='color.id' [name]="color.name" [productId]='color.productId'(change)="onItemChange2(color.name)"></app-color>	
+											
+											
+											
+										</div>
+									</div>
+
+									<div class="card_area">
+										<div class="product_count_area">
+											<p>Quantity</p>
+											<div class="product_count d-inline-block">
+												<span class="product_count_item inumber-decrement" (click)="handleMinus()"> <i class="ti-minus"></i></span>
+												<input class="product_count_item input-number" type="text"  value="0" [(ngModel)]="value">
+												<span class="product_count_item number-increment" (click)="handlePlus()"> <i class="ti-plus"></i></span>
+											</div>
+										</div>
+									</div>
+
+
+                                    <div class="center">
+                                        <div class="buttons d-flex flex-row">
+                                             <button id="add"   class="btn  cart-button px-5"(click)='addtoCustomerProduct()'><div class="cart"><i class="fa fa-shopping-cart"></i></div>Add to cart </button>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <h1 id="details-header">Details</h1>
+                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="table-responsive">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<h5>Length</h5>
+									</td>
+									<td>
+										<h5>{{ProductLength.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Neckline</h5>
+									</td>
+									<td>
+										<h5>{{ProductNeckline.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Season</h5>
+									</td>
+									<td>
+										<h5>{{ProductSeason.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Sleeve Length</h5>
+									</td>
+									<td>
+										<h5>{{ProductSleeveLength.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Style</h5>
+									</td>
+									<td>
+										<h5>{{ProductStyle.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Skin Color</h5>
+									</td>
+									<td>
+										<h5>{{ProductSkinColor.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Age</h5>
+									</td>
+									<td>
+										<h5>{{ProductAge.name}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Material</h5>
+									</td>
+									<td>
+										<h5>{{ProductMaterial.name}}</h5>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div> -->
+                <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="row">
+						<div class="col-6">
+							<div class="comment_list">
+
+								<app-review *ngFor="let review of home.ProductReviews"  [id]='review.id' [userId]="review.userId"
+								 [productId]="review.productId" [rate]="review.rate" [reviewText]='review.reviewText' ></app-review>
+							
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="review_box">
+								<h4 id="add-review">Add Review</h4>
+								<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea class="form-control" name="message" id="message"  placeholder="Message" matInput   [formControl]="Message"></textarea>
+										</div>
+									</div>
+									<div class="col-md-12 text-right">
+                                        <div class="buttons d-flex flex-row">
+                                            <button id="submit" type="submit" value="submit"  class="btn  cart-button px-5" (click)="submit()">Submit Now </button>
+                                       </div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>  
+            
+</main>
+
+<app-footer></app-footer> 
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<div class="content">
+    
+  <div class="container">
+    <div class="row align-items-stretch no-gutters contact-wrap">
+      <div class="col-md-12">
+        <div class="form h-100">
+          <h3>Create New Product</h3>
+          <form class="mb-5" method="post" id="contactForm" name="contactForm">
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="name" class="col-form-label">Product Name </label><br>
+                <input type="text" class="form-control" name="name" id="name"matInput   [formControl]="name"  required>
+              </div>
+             
+            </div><br>
+           
+            
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="priceBeforDiscount" class="col-form-label">Product price</label><br>
+                <input type="text" class="form-control" name="priceBeforDiscount" id="priceBeforDiscount"matInput   [formControl]="priceBeforDiscount" required>
+              </div>
+            </div><br>
+            
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="priceAfterDiscount" class="col-form-label">price After Discount </label><br>
+                <input type="text" class="form-control" name="priceAfterDiscount" id="priceAfterDiscount"matInput   [formControl]="priceAfterDiscount" required>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="quantity" class="col-form-label">Product quantity </label><br>
+                <input type="text" class="form-control" name="quantity" id="quantity"matInput   [formControl]="quantity"  required>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="state" class="col-form-label">Product state </label><br>
+                <input type="text" class="form-control" name="state" id="state"matInput   [formControl]="state"  required>
+              </div>
+            </div><br>
+
+            <div class="widget size mb-50">
+              <h4 class="widget-title">Product Category</h4>
+              <div class="widget-desc">
+                 
+            <app-categry *ngFor="let cat of admin.allCategories"  [id]='cat.id' [name]="cat.name" (change)="onItemChange(cat.id)"></app-categry>	
+
+              </div>
+          </div>
+
+
+          <section class="example-section" [formGroup]="size">
+            <h4>product's size :</h4>
+            <p><mat-checkbox formControlName="S">S</mat-checkbox></p>
+            <p><mat-checkbox formControlName="M">M</mat-checkbox></p>
+            <p><mat-checkbox formControlName="L">L</mat-checkbox></p>
+            <p><mat-checkbox formControlName="XL">XL</mat-checkbox></p>
+           
+          </section>
+        
+
+          <section class="example-section" [formGroup]="color">
+            <h4>product's color:</h4>
+            <p><mat-checkbox formControlName="white">white</mat-checkbox></p>
+            <p><mat-checkbox formControlName="black">black</mat-checkbox></p>
+            <p><mat-checkbox formControlName="blue">blue</mat-checkbox></p>
+            <p><mat-checkbox formControlName="pink">pink</mat-checkbox></p>
+            <p><mat-checkbox formControlName="green">green</mat-checkbox></p>
+            <p><mat-checkbox formControlName="red">red</mat-checkbox></p>
+            <p><mat-checkbox formControlName="gold">gold</mat-checkbox></p>
+          </section>
+         
+
+
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
+                <label for="description" class="col-form-label">Product description </label><br>
+                <textarea type="text" class="form-control" name="description" id="description"matInput   [formControl]="description"  required></textarea>
+              </div>
+            </div><br>
+            
+             <div class="row">
+              <div class="col-md-12 form-group mb-3">
+                <label for="image" class="col-form-label">Product Image 1</label><br>
+                <input class="form-control" name="image" id="image" matInput  [formControl]="image1" >
+              </div>
+            </div><br> 
+            <div class="row">
+              <div class="col-md-12 form-group mb-3">
+                <label for="image" class="col-form-label">Product Image 2</label><br>
+                <input class="form-control" name="image" id="image"  matInput [formControl]="image2" >
+              </div>
+            </div><br> 
+            
+            <div class="row">
+              <div class="col-md-12 form-group mb-3">
+                <label for="image" class="col-form-label">Product Image 3</label><br>
+                <input class="form-control" name="image" id="image"  matInput [formControl]="image3" >
+              </div>
+            </div><br> 
+            <div class="row">
+              <div class="col-md-12 form-group mb-3">
+                <label for="image" class="col-form-label">Product Image 4</label><br>
+                <input class="form-control" name="image" id="image" matInput  [formControl]="image4" >
+              </div>
+            </div><br> 
+           
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <input (click)="onsubmit()" value="submit" class="btn btn-primary rounded-0 py-2 px-4">
+                <span class="submitting"></span>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

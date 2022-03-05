@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashionista</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon1.png"> 
+
+    <!-- CSS here -->
+        <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+        <link rel="stylesheet" href="assets/css/slicknav.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/themify-icons.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/style.css"> -->
+
+             
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <app-navbar></app-navbar>
+    <main>
+        <!-- Hero Area Start-->
+        <div class="slider-area ">
+            <div class="single-slider slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Search</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<section class="popular-items latest-padding">
+ 
+    <div class="search__container " style="margin:auto 600px;">
+        <input class="search__input" type="text" placeholder="Search" (change)="getData($event)">
+    </div>
+    <div class="container">
+       
+        <!-- Nav Card -->
+        <div class="tab-content" id="nav-tabContent">
+
+            <!-- card one -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                    
+                    <div class=container>
+
+
+
+                        <div class="cards">
+                           
+                            <app-card *ngFor="let p of admin.allProducts"  [id]='p.id' [name]="p.name"
+                            [priceAfterDiscount]="p.priceAfterDiscount" [priceBeforDiscount]="p.priceBeforDiscount"
+                             [state]='p.state' [imageName]='p.imageName' style="margin-top: 20px"></app-card>
+                    
+                    
+                    </div>
+                    
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+     
+    </div>
+</section>
+    </main>
+    <app-footer></app-footer>
+    
+    <!--? Search model Begin -->
+    <div class="search-model-box">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-btn">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Searching key.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+   
+</body>
+</html>

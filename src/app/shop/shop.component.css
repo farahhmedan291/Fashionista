@@ -1,0 +1,33 @@
+.container {
+
+    width: 98%;
+
+    margin: 0 auto;
+
+    margin-top: 40px;
+
+    }
+
+    .cards {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+
+    }
+
+    #cart{
+        float: right;
+        margin: 50px 100px;
+    }
+    #cart button{
+        padding: 20px;    }
+    /* .cart{
+        padding: 20px;
+    } */
+
+    

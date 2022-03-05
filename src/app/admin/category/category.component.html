@@ -1,0 +1,30 @@
+
+<mat-card class="example-card" style="margin: 20px;">
+
+    <mat-card-header>
+  
+    </mat-card-header>
+  
+    <div class="img">
+  
+    <img mat-card-image src="{{image}}" alt="Photo of a Shiba Inu">  
+  
+  </div>
+  
+    <mat-card-content>
+  
+      <h2>{{name | uppercase}}</h2>
+  
+    </mat-card-content>
+  
+    <mat-card-actions>
+  
+      <button class="genric-btn success circle" mat-button (click)="openEdit()" style="background-color: #24B3A8;">Edit</button>
+      <button class="genric-btn success circle" mat-button (click)="delete()" style="background-color: #24B3A8; ">Delete</button>
+
+    </mat-card-actions>
+  
+  </mat-card>
+
+
+  

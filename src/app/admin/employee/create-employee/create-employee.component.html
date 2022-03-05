@@ -1,0 +1,73 @@
+<div class="content">
+    
+    <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap">
+        <div class="col-md-12">
+          <div class="form h-100">
+            <h3>Create New Employee</h3>
+            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="name" class="col-form-label">Employee Name </label><br>
+                  <input type="text" class="form-control" name="name" id="name"matInput   [formControl]="name"  required>
+                </div>
+               
+              </div><br>
+             
+              
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="phoneNumber" class="col-form-label">Employee phone Number</label><br>
+                  <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"matInput   [formControl]="phoneNumber" required>
+                </div>
+              </div><br>
+              
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="email" class="col-form-label">Employee email </label><br>
+                  <input type="text" class="form-control" name="email" id="email"matInput   [formControl]="email" required>
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="address" class="col-form-label">Employee address </label><br>
+                  <input type="text" class="form-control" name="address" id="address"matInput   [formControl]="address"  required>
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="salary" class="col-form-label">Employee salary </label><br>
+                  <input type="text" class="form-control" name="salary" id="salary"matInput   [formControl]="salary"  required>
+                </div>
+              </div><br>
+  
+              <div class="widget size mb-50">
+                <h4 class="widget-title">Employee department</h4>
+                <div class="widget-desc">
+                   
+              <app-department *ngFor="let cat of admin.Departments"  [id]='cat.id' [name]="cat.name" (change)="onItemChange(cat.id)"></app-department>	
+  
+                </div>
+            </div>
+  
+
+  
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <input (click)="submit()" value="submit" class="btn btn-primary rounded-0 py-2 px-4" style="margin-top: 20px;">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+  
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  
+  
+  

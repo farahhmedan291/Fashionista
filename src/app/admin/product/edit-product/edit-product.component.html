@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashionista</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon1.png"> 
+
+
+   
+</head>
+    
+
+<body>
+    
+  <app-navbar></app-navbar>
+
+    <main>
+        <!-- Hero Area Start-->
+        <div class="slider-area ">
+            <div class="single-slider slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Edit Product</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Area End-->
+        <!--================Single Product Area =================-->
+        <div class="product_image_area">
+            <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12" style="margin-left: 100px;" >
+                <div class="product_img_slide owl-carousel">
+                    <div class="single_product_img">
+                        <!-- <img src="{{admin.selectedCategory.image}}" alt="#" style="margin-left: 340px !important;" class="img-fluid"> -->
+                      
+                            <img src="{{admin.ProductImages[0].imageName}}" alt="#" style="height:400px; width:250px;" class="img-fluid">
+                            <img src="{{admin.ProductImages[1].imageName}}" alt="#"style="height:400px;width: 250px;" class="img-fluid">
+                            <img src="{{admin.ProductImages[2].imageName}}" alt="#" style="height:400px;width:250px;"class="img-fluid">
+                            <img src="{{admin.ProductImages[3].imageName}}" alt="#" style="height:400px;width:250px;"class="img-fluid">
+                         
+                           
+                        
+
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-8">
+                <div class="single_product_text text-center">
+                    <h3>{{admin.selectedProductById.name}}</h3>
+                    
+                    <div class="card_area">
+                        <div class="product_count_area">
+                         
+                            <div class="content">
+    
+                                <div class="container">
+                                  <div class="row align-items-stretch no-gutters contact-wrap">
+                                    <div class="col-md-12">
+                                      <div class="form h-100">
+                                        <h3>Edit Product</h3>
+                                        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="" class="col-form-label">Name</label>
+                                              <input type="text" class="form-control" name="name" id="name" matInput   [formControl]="name" [(ngModel)]="admin.selectedProductById.name"  required>
+                                            </div>
+                                           
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="priceBeforDiscount" class="col-form-label">Product price</label><br>
+                                              <input type="text" class="form-control" name="priceBeforDiscount" id="priceBeforDiscount"matInput   [formControl]="priceBeforDiscount" [(ngModel)]="admin.selectedProductById.priceBeforDiscount" required>
+                                            </div>
+                                          </div><br>
+                                          
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="priceAfterDiscount" class="col-form-label">price After Discount </label><br>
+                                              <input type="text" class="form-control" name="priceAfterDiscount" id="priceAfterDiscount"matInput   [formControl]="priceAfterDiscount" [(ngModel)]="admin.selectedProductById.priceAfterDiscount" required>
+                                            </div>
+                                          </div><br>
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="quantity" class="col-form-label">Product quantity </label><br>
+                                              <input type="text" class="form-control" name="quantity" id="quantity"matInput   [formControl]="quantity" [(ngModel)]="admin.selectedProductById.quantity" required>
+                                            </div>
+                                          </div><br>
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="state" class="col-form-label">Product state </label><br>
+                                              <input type="text" class="form-control" name="state" id="state"matInput   [formControl]="state" [(ngModel)]="admin.selectedProductById.state" required>
+                                            </div>
+                                          </div><br>
+                              
+                                          <div class="widget size mb-50">
+                                            <h6 class="widget-title">Product Category</h6>
+                                            <div class="widget-desc">
+                                               
+                                          <app-categry *ngFor="let cat of admin.allCategories"  [id]='cat.id' [name]="cat.name" (change)="onItemChange(cat.id)"></app-categry>	
+                              
+                                            </div>
+                                        </div>
+      
+                                        <div class="row">
+                                        <section class="example-section" [formGroup]="size">
+                                          <h6>product's size :</h6>
+                                          <p><mat-checkbox formControlName="S">S</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="M">M</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="L">L</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="XL">XL</mat-checkbox></p>
+                                         
+                                        </section>
+                                    </div><br>
+                                        <div class="row">
+                                        <section class="example-section" [formGroup]="color">
+                                          <h6>product's color:</h6>
+                                          <p><mat-checkbox formControlName="white">white</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="black">black</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="blue">blue</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="pink">pink</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="green">green</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="red">red</mat-checkbox></p>
+                                          <p><mat-checkbox formControlName="gold">gold</mat-checkbox></p>
+                                        </section>
+                                    </div><br>
+                              
+                              
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="description" class="col-form-label">Product description </label><br>
+                                              <textarea type="text" class="form-control" name="description" id="description"matInput   [formControl]="description"  [(ngModel)]="admin.selectedProductById.description" required></textarea>
+                                            </div>
+                                          </div><br>
+                                          
+                                           <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="image" class="col-form-label">Product Image 1</label><br>
+                                              <input class="form-control" name="image" id="image" matInput  [formControl]="image1"  [(ngModel)]="admin.ProductImages[0].imageName">
+                                            </div>
+                                          </div><br> 
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="image" class="col-form-label">Product Image 2</label><br>
+                                              <input class="form-control" name="image" id="image"  matInput [formControl]="image2"  [(ngModel)]="admin.ProductImages[1].imageName">
+                                            </div>
+                                          </div><br> 
+                                          
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="image" class="col-form-label">Product Image 3</label><br>
+                                              <input class="form-control" name="image" id="image"  matInput [formControl]="image3"  [(ngModel)]="admin.ProductImages[2].imageName">
+                                            </div>
+                                          </div><br> 
+                                          <div class="row">
+                                            <div class="col-md-10 form-group mb-3">
+                                              <label for="image" class="col-form-label">Product Image 4</label><br>
+                                              <input class="form-control" name="image" id="image" matInput  [formControl]="image4"  [(ngModel)]="admin.ProductImages[3].imageName">
+                                            </div>
+                                          </div><br> 
+                                         
+
+                                          <div class="row">
+                                            <div class="col-md-12 form-group">
+                                              <input type="submit" value="submit" (click)="submit()" style="margin: 30px;" class="btn btn-primary rounded-0 py-2 px-4">
+                                              <span class="submitting"></span>
+                                            </div>
+                                          </div>
+                                        </form>
+                            
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                              </div>
+                         
+                        </div>
+                   
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--================End Single Product Area =================-->
+       
+    </main>
+    <app-footer></app-footer>
+</body>
+
+</html>

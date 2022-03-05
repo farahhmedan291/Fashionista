@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fashionista</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon1.png"> 
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <app-navbar></app-navbar>
+
+    <main>
+      <!-- Hero Area Start-->
+      <div class="slider-area ">
+          <div class="single-slider slider-height2 d-flex align-items-center">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xl-12">
+                          <div class="hero-cap text-center">
+                              <h2>Checkout</h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="billing_details">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3>Billing Details</h3>
+              <form class="row contact_form">
+                <div class="col-md-6 form-group p_star">
+                  <input type="text" class="form-control" id="first" name="name" matInput [formControl]="name" placeholder="name" [(ngModel)]="home.userInfo.name"/>
+                </div>
+                <div class="col-md-6 form-group p_star">
+                  <input type="text" class="form-control" id="number" name="number" matInput [formControl]="number" placeholder="Phone number"  [(ngModel)]="home.userInfo.phoneNumber"/>
+                </div>
+                <div class="col-md-12 form-group p_star">
+                  <input type="text" class="form-control" id="email" name="email" matInput  [formControl]="email" placeholder="Email Address" [(ngModel)]="home.userInfo.email"/>
+                          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                          Please enter a valid email address
+
+                          </mat-error>
+                </div>
+                <div class="col-md-12 form-group p_star">
+                  <input type="text" class="form-control" id="add1" name="add1" matInput [formControl]="add1" placeholder="Address" [(ngModel)]="home.userInfo.address"/>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+              <div class="order_box">
+                <h2>Your Order</h2>
+                <ul class="list">
+                  <li>
+                    <a href="#" class="disabled">Product
+                      <span>Total</span>
+                    </a>
+                  </li>
+                  <app-billing-details *ngFor="let card of home.carProduct" [id]='card.id' [userId]='card.userId' [productId]='card.productId'
+                  [quantity]='card.quantity' [price]='card.price' [name]='card.name'></app-billing-details>
+                </ul> 
+                <ul class="list list_2">
+                  <li>
+                    <a href="#" class="disabled">Subtotal
+                      <span>{{sum}} JD</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"class="disabled">Shipping
+                      <span>3 JD</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="disabled">Total
+                      <span>{{total}}</span>
+                    </a>
+                  </li>
+                </ul>
+                
+
+
+                <button class="btn_3"  (click)="confirmation()" [disabled]=!email.valid||!name.valid||!number.valid||!add1.valid>Confirm Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+</main>
+
+<app-footer></app-footer>
+
+ <!--? Search model Begin -->
+ <div class="search-model-box">
+     <div class="h-100 d-flex align-items-center justify-content-center">
+         <div class="search-close-btn">+</div>
+         <form class="search-model-form">
+             <input type="text" id="search-input" placeholder="Searching key.....">
+         </form>
+     </div>
+ </div>
+ <!-- Search model end -->
+
+
+ 
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+
+.billing_details{
+  margin: 100px;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.btn_3{
+    margin-left: 85px !important;
+}
+.name{
+  color: #828bc1 !important;
+  padding: 10px;
+}
+.middle{
+  color:#5e5894 !important;
+  padding: 10px;
+
+}
+.last{
+color: #828bc1 !important;
+padding: 10px;
+
+}
+.row{
+  display: block !important;
+}
+hr {
+  background-color: #fff;
+  padding: 0;
+  margin: 80px;
+}
+
+hr.space {
+  border: 0;
+  border-top: 1px solid #a1a1a1;
+  border-bottom: 1px solid #fff;
+}
+.row{
+  padding: 10px;
+}
+

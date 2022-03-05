@@ -1,0 +1,92 @@
+
+#header1{
+    color: #0b1c39;
+}
+#header2{
+    font-family: "Josefin Sans",sans-serif;
+}
+#shop-btn{
+padding: 25px 29px;
+background: #4a4a4b;
+font-family: "Josefin Sans",sans-serif;
+text-transform: uppercase;
+color: #fff;
+font-size: 16px;
+font-weight: 600;
+letter-spacing: 0.03em;
+border-radius: 0px;
+display: inline-block;
+line-height: 0;
+transition: color 0.4s linear;
+position: relative;
+z-index: 1;
+border: 0;
+overflow: hidden;
+margin: 0;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+user-select: none;
+outline: medium none;
+text-decoration: none;
+}
+#more-btn, #show-btn{
+    background: #78DEC7;
+    font-family: "Josefin Sans",sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 30px 28px;
+    border-radius: 0px;
+    display: inline-block;
+    line-height: 0;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: medium none;
+    }
+
+#big-img1:hover{
+    zoom: 50%;
+}
+#Popular-header{
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    font-family: "Josefin Sans",sans-serif;
+    margin-top: 0px;
+    font-style: normal;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    margin-block-start: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center!important;
+}
+#Popular-parag{
+    font-family: "Roboto",sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+    margin-top: 0;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center!important;
+    font-style: normal;
+}
+
